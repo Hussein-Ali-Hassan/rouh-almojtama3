@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "روح المجتمع",
-  description: "جلسات مناقشة كتاب روح المجتمع",
+  description: "أرشيف جلسات مناقشة كتاب روح المجتمع",
   openGraph: {
     type: "website",
     locale: "ar",

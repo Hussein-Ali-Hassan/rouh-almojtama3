@@ -2,6 +2,31 @@ import Slider from "./Slider";
 
 const events = [
   {
+    title: "جلسة مناقشة",
+    date: "28-5-2022",
+    imagesCount: 1,
+  },
+  {
+    title: "جلسة مناقشة",
+    date: "19-2-2022",
+    imagesCount: 4,
+  },
+  {
+    title: "جلسة مناقشة",
+    date: "15-1-2022",
+    imagesCount: 1,
+  },
+  {
+    title: "جلسة مناقشة",
+    date: "15-8-2021",
+    imagesCount: 2,
+  },
+  {
+    title: "جلسة مناقشة",
+    date: "10-7-2021",
+    imagesCount: 1,
+  },
+  {
     title: "جلسة مناقشة في الطبيعة مع كورونا",
     date: "26-6-2021",
     imagesCount: 3,
