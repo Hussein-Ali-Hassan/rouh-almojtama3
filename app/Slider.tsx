@@ -72,7 +72,7 @@ function Card({
   const [isLoading, setLoading] = useState(true);
 
   return (
-    <div className={classNames("overflow-hidden w-[300px] rounded-xl")}>
+    <div className={classNames("overflow-hidden w-[380px] rounded-xl")}>
       <Image
         onClick={() => {
           setClickedImageIndex(index);

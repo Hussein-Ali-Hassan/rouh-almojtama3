@@ -1,13 +1,19 @@
 import Slider from "./Slider";
 
 const events = [
-  { title: "جلسة مناقشة", date: "24-11-2019", imagesCount: 2 },
-  { title: "جلسة مناقشة", date: "7-12-2019", imagesCount: 2 },
+  { title: "جلسة مناقشة", date: "19-4-2021", imagesCount: 1 },
+  {
+    title: "جلسة مناقشة",
+    date: "7-3-2020",
+    imagesCount: 4,
+  },
   {
     title: "جلسة مناقشة مع عيد ميلاد الشيخ مصطفى",
     date: "4-1-2020",
     imagesCount: 4,
   },
+  { title: "جلسة مناقشة", date: "7-12-2019", imagesCount: 2 },
+  { title: "جلسة مناقشة", date: "24-11-2019", imagesCount: 2 },
 ];
 
 // sort events by date descending
@@ -33,9 +39,9 @@ export default function Home() {
         </p>
       </div>
       <div className="lg:px-2">
-        <h2 className="my-10 text-lg">
+        <h2 className="mb-10 mt-14 text-lg">
           بدأت جلسات المناقشة الأسبوعية في كتاب روح المجتمع في 1-7-2018 وهي
-          مستمرة حتى يومنا هذا في عربصاليم مساء كل جمعة
+          مستمرة حتى يومنا هذا في عربصاليم مساء كل جمعة.
         </h2>
         {events.map((event) => (
           <div key={event.date} className="py-5">
