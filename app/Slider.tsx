@@ -72,7 +72,7 @@ function Card({
   const [isLoading, setLoading] = useState(true);
 
   return (
-    <div className={classNames("overflow-hidden w-[380px] rounded-xl")}>
+    <div className={classNames("overflow-hidden w-[400px] rounded-xl")}>
       <Image
         onClick={() => {
           setClickedImageIndex(index);
@@ -88,7 +88,7 @@ function Card({
             ? "scale-110 blur-2xl grayscale"
             : "scale-100 blur-0 grayscale-0"
         )}
-        onLoadingComplete={() => {
+        onLoad={() => {
           setLoading(false);
         }}
       />
