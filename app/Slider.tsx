@@ -1,10 +1,11 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 import Lightbox, { SlideImage } from "yet-another-react-lightbox";
 import Captions from "yet-another-react-lightbox/plugins/captions";
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
+import useWindowSize from "@/hooks/useWindowSize";
 
 export default function Slider({ images }: { images: string[] }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -72,7 +73,7 @@ function Card({
   const [isLoading, setLoading] = useState(true);
 
   return (
-    <div className={classNames("overflow-hidden w-[400px] rounded-xl")}>
+    <div className={classNames("overflow-hidden w-[390px] rounded-xl")}>
       <Image
         onClick={() => {
           setClickedImageIndex(index);
@@ -98,33 +99,4 @@ function Card({
 
 function classNames(...classes: (string | boolean)[]) {
   return classes.filter(Boolean).join(" ");
-}
-
-function useWindowSize() {
-  // Initialize state with undefined width/height so server and client renders match
-  // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
-  const [windowSize, setWindowSize] = useState<{
-    width: undefined | number;
-    height: undefined | number;
-  }>({
-    width: undefined,
-    height: undefined,
-  });
-  useEffect(() => {
-    // Handler to call on window resize
-    function handleResize() {
-      // Set window width/height to state
-      setWindowSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
-    }
-    // Add event listener
-    window.addEventListener("resize", handleResize);
-    // Call handler right away so state gets updated with initial window size
-    handleResize();
-    // Remove event listener on cleanup
-    return () => window.removeEventListener("resize", handleResize);
-  }, []); // Empty array ensures that effect is only run on mount
-  return windowSize;
 }
