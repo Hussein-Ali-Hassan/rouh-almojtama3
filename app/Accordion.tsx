@@ -3,6 +3,7 @@
 import { Dispatch, SetStateAction, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Slider from "./Slider";
+import { BiChevronDown } from "react-icons/bi";
 
 const events = [
   {
@@ -107,15 +108,33 @@ const Panel = ({
 }) => {
   const isOpen = open === id;
 
+  const handleClick = () => {
+    if (isOpen) {
+      setOpen("");
+    } else {
+      setOpen(id);
+      // scroll to top of panel
+      const panel = document.getElementById(`archive-${year}`);
+      if (panel) {
+        console.log("scroll");
+        setTimeout(() => panel.scrollIntoView({ behavior: "smooth" }), 450);
+      }
+    }
+  };
+
   return (
     <>
       <button
-        className="bg-white hover:bg-slate-50 transition-colors p-3 border-r-[1px] border-b-[1px] border-slate-200 flex flex-row-reverse items-center gap-4 relative group"
-        onClick={() => (isOpen ? setOpen("") : setOpen(id))}
+        id={`archive-${year}`}
+        className={`transition-colors p-3 border-r-[1px] border-b-[1px] border-slate-200 flex flex-row-reverse items-center gap-4 relative group duration-200 ease-in-out text-white bg-[#4A8781]`}
+        onClick={handleClick}
       >
         <span className="block text-xl font-light">أرشيف عام {year}</span>
 
-        <span className="w-4 h-4 bg-white group-hover:bg-slate-50 transition-colors border-r-[1px] border-b-[1px]border-slate-200 rotate-45 absolute bottom-0 right-[50%] translate-y-[50%] translate-x-[50%] z-20" />
+        <BiChevronDown
+          className={`mr-auto ${isOpen ? "rotate-180" : ""}`}
+          size={20}
+        />
       </button>
 
       <AnimatePresence>
