@@ -8,6 +8,36 @@ import { BiChevronDown } from "react-icons/bi";
 const events = [
   {
     title: "جلسة مناقشة",
+    date: "22-12-2023",
+    imagesCount: 3,
+  },
+  {
+    title: "جلسة مناقشة",
+    date: "8-12-2023",
+    imagesCount: 3,
+  },
+  {
+    title: "جلسة مناقشة",
+    date: "24-11-2023",
+    imagesCount: 3,
+  },
+  {
+    title: "جلسة مناقشة",
+    date: "17-11-2023",
+    imagesCount: 1,
+  },
+  {
+    title: "جلسة مناقشة",
+    date: "10-11-2023",
+    imagesCount: 1,
+  },
+  {
+    title: "جلسة مناقشة",
+    date: "3-11-2023",
+    imagesCount: 6,
+  },
+  {
+    title: "جلسة مناقشة",
     date: "23-7-2022",
     imagesCount: 1,
   },

@@ -1,4 +1,4 @@
-import Events from "./Accordion";
+import Events from "./Events";
 
 export default function Home() {
   return (
