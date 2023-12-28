@@ -4,104 +4,7 @@ import { Dispatch, SetStateAction, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Slider from "./Slider";
 import { BiChevronDown } from "react-icons/bi";
-
-const events = [
-  {
-    title: "جلسة مناقشة",
-    date: "22-12-2023",
-    imagesCount: 3,
-  },
-  {
-    title: "جلسة مناقشة",
-    date: "8-12-2023",
-    imagesCount: 3,
-  },
-  {
-    title: "جلسة مناقشة",
-    date: "24-11-2023",
-    imagesCount: 3,
-  },
-  {
-    title: "جلسة مناقشة",
-    date: "17-11-2023",
-    imagesCount: 1,
-  },
-  {
-    title: "جلسة مناقشة",
-    date: "10-11-2023",
-    imagesCount: 1,
-  },
-  {
-    title: "جلسة مناقشة",
-    date: "3-11-2023",
-    imagesCount: 6,
-  },
-  {
-    title: "جلسة مناقشة",
-    date: "23-7-2022",
-    imagesCount: 1,
-  },
-  {
-    title: "جلسة مناقشة",
-    date: "18-6-2022",
-    imagesCount: 1,
-  },
-  {
-    title: "عشاء ومولد بمناسبة ولادة السيدة الزهراء(ع)",
-    date: "13-1-2023",
-    imagesCount: 3,
-  },
-  {
-    title: "عزيمة غدا مع انتخاب مدير",
-    date: "3-6-2022",
-    imagesCount: 4,
-  },
-  {
-    title: "جلسة مناقشة",
-    date: "28-5-2022",
-    imagesCount: 1,
-  },
-  {
-    title: "جلسة مناقشة",
-    date: "19-2-2022",
-    imagesCount: 4,
-  },
-  {
-    title: "جلسة مناقشة",
-    date: "15-1-2022",
-    imagesCount: 1,
-  },
-  {
-    title: "جلسة مناقشة",
-    date: "15-8-2021",
-    imagesCount: 2,
-  },
-  {
-    title: "جلسة مناقشة",
-    date: "10-7-2021",
-    imagesCount: 1,
-  },
-  {
-    title: "جلسة مناقشة في الطبيعة مع كورونا",
-    date: "26-6-2021",
-    imagesCount: 3,
-  },
-  { title: "جلسة مناقشة في المسجد", date: "19-4-2021", imagesCount: 1 },
-  { title: "جلسة مناقشة مع عشاء خفيف", date: "17-3-2021", imagesCount: 1 },
-  { title: "جلسة مناقشة", date: "16-9-2020", imagesCount: 4 },
-  {
-    title: "جلسة مناقشة",
-    date: "7-3-2020",
-    imagesCount: 4,
-  },
-  {
-    title: "جلسة مناقشة مع عيد ميلاد الشيخ مصطفى",
-    date: "4-1-2020",
-    imagesCount: 4,
-  },
-  { title: "جلسة مناقشة", date: "7-12-2019", imagesCount: 2 },
-  { title: "جلسة مناقشة", date: "24-11-2019", imagesCount: 2 },
-];
+import events from "../events";
 
 // sort events by date descending
 events.sort((a, b) => convertDate(b.date) - convertDate(a.date));
@@ -125,15 +28,24 @@ const Events = () => {
               .filter((event) => event.date.includes(year))
               .map((event) => (
                 <div key={event.date} className="py-4">
-                  <h3 className="text-lg mb-3">
-                    {event.title}{" "}
-                    <span className="text-gray-500 text-sm">
-                      ~ {event.date}
-                    </span>
-                  </h3>
-                  <Slider
-                    images={computeImagesUrls(event.date, event.imagesCount)}
-                  />
+                  {event.imagesCount > 0 ? (
+                    <>
+                      <h3 className="text-lg mb-3">
+                        {event.title}{" "}
+                        <span className="text-gray-500 text-sm">
+                          ~ {event.date}
+                        </span>
+                      </h3>
+                      <Slider
+                        images={computeImagesUrls(
+                          event.date,
+                          event.imagesCount
+                        )}
+                      />
+                    </>
+                  ) : (
+                    <span className="text-lg">لا يوجد أرشيف لهذا العام 😢</span>
+                  )}
                 </div>
               ))}
           </Panel>
