@@ -33,6 +33,7 @@ export default function Slider({ images }: { images: string[] }) {
               <Card
                 key={image}
                 image={image}
+                totalImages={images.length}
                 index={index}
                 setClickedImageIndex={setClickedImageIndex}
                 setIsOpen={setIsOpen}
@@ -64,16 +65,23 @@ function Card({
   index,
   setClickedImageIndex,
   setIsOpen,
+  totalImages,
 }: {
   image: string;
   index: number;
+  totalImages: number;
   setIsOpen: (v: boolean) => void;
   setClickedImageIndex: (v: number) => void;
 }) {
   const [isLoading, setLoading] = useState(true);
 
   return (
-    <div className={classNames("overflow-hidden w-[390px] rounded-xl")}>
+    <div
+      className={classNames(
+        "overflow-hidden rounded-xl",
+        totalImages === 1 ? "w-full md:w-[355px]" : "w-[355px]"
+      )}
+    >
       <Image
         onClick={() => {
           setClickedImageIndex(index);

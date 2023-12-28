@@ -8,6 +8,26 @@ import { BiChevronDown } from "react-icons/bi";
 const events = [
   {
     title: "جلسة مناقشة",
+    date: "23-7-2022",
+    imagesCount: 1,
+  },
+  {
+    title: "جلسة مناقشة",
+    date: "18-6-2022",
+    imagesCount: 1,
+  },
+  {
+    title: "عشاء ومولد بمناسبة ولادة السيدة الزهراء(ع)",
+    date: "13-1-2023",
+    imagesCount: 3,
+  },
+  {
+    title: "عزيمة غدا مع انتخاب مدير",
+    date: "3-6-2022",
+    imagesCount: 4,
+  },
+  {
+    title: "جلسة مناقشة",
     date: "28-5-2022",
     imagesCount: 1,
   },
@@ -65,7 +85,7 @@ const Events = () => {
 
   return (
     <div
-      className="flex flex-col w-full shadow overflow-hidden"
+      className="flex flex-col w-full shadow overflow-hidden space-y-0.5"
       style={{ direction: "ltr" }}
     >
       {years.map((year) => {
@@ -116,7 +136,6 @@ const Panel = ({
       // scroll to top of panel
       const panel = document.getElementById(`archive-${year}`);
       if (panel) {
-        console.log("scroll");
         setTimeout(() => panel.scrollIntoView({ behavior: "smooth" }), 450);
       }
     }
