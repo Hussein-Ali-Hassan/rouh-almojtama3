@@ -5,6 +5,10 @@ import { AnimatePresence, motion } from "framer-motion";
 import Slider from "./Slider";
 import { BiChevronDown } from "react-icons/bi";
 import events from "../events";
+import Lightbox, { SlideImage } from "yet-another-react-lightbox";
+import Captions from "yet-another-react-lightbox/plugins/captions";
+import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
+import useWindowSize from "@/hooks/useWindowSize";
 
 // sort events by date descending
 events.sort((a, b) => convertDate(b.date) - convertDate(a.date));
@@ -15,43 +19,91 @@ const years = events
 
 const Events = () => {
   const [open, setOpen] = useState(years[0]);
+  const [isOpen, setIsOpen] = useState(false);
+  const [clickedImageIndex, setClickedImageIndex] = useState(0);
+
+  const allImages: string[] = [];
+  events.forEach((event) => {
+    const images = computeImagesUrls(event.date, event.imagesCount);
+    allImages.push(...images);
+  });
+
+  const { width } = useWindowSize();
+
+  const slides: SlideImage[] = allImages.map((image) => ({
+    src: image,
+    width: width && (width < 768 ? width : 900),
+    height: width && (width < 768 ? 300 : 600),
+  }));
 
   return (
-    <div
-      className="flex flex-col w-full shadow overflow-hidden space-y-0.5"
-      style={{ direction: "ltr" }}
-    >
-      {years.map((year) => {
-        return (
-          <Panel key={year} id={year} open={open} setOpen={setOpen} year={year}>
-            {events
-              .filter((event) => event.date.includes(year))
-              .map((event) => (
-                <div key={event.date} className="py-4">
-                  {event.imagesCount > 0 ? (
-                    <>
-                      <h3 className="text-lg mb-3">
-                        {event.title}{" "}
-                        <span className="text-gray-500 text-sm">
-                          ~ {event.date}
-                        </span>
-                      </h3>
-                      <Slider
-                        images={computeImagesUrls(
-                          event.date,
-                          event.imagesCount
-                        )}
-                      />
-                    </>
-                  ) : (
-                    <span className="text-lg">لا يوجد أرشيف لهذا العام 😢</span>
-                  )}
-                </div>
-              ))}
-          </Panel>
-        );
-      })}
-    </div>
+    <>
+      <div
+        className="flex flex-col w-full shadow overflow-hidden space-y-0.5"
+        style={{ direction: "ltr" }}
+      >
+        {years.map((year) => {
+          return (
+            <Panel
+              key={year}
+              id={year}
+              open={open}
+              setOpen={setOpen}
+              year={year}
+            >
+              {events
+                .filter((event) => event.date.includes(year))
+                .map((event) => (
+                  <div key={event.date} className="py-4">
+                    {event.imagesCount > 0 ? (
+                      <>
+                        <h3 className="text-lg mb-3">
+                          {event.title}{" "}
+                          <span className="text-gray-500 text-sm">
+                            ~ {event.date}
+                          </span>
+                        </h3>
+                        <Slider
+                          images={computeImagesUrls(
+                            event.date,
+                            event.imagesCount
+                          )}
+                          onClick={(imgSrc) => {
+                            // get the image index in all images
+                            const imageIndex = allImages.findIndex(
+                              (image) => image === imgSrc
+                            );
+                            setClickedImageIndex(imageIndex);
+                            setIsOpen(true);
+                          }}
+                        />
+                      </>
+                    ) : (
+                      <span className="text-lg">
+                        لا يوجد أرشيف لهذا العام 😢
+                      </span>
+                    )}
+                  </div>
+                ))}
+            </Panel>
+          );
+        })}
+      </div>
+
+      <Lightbox
+        index={clickedImageIndex}
+        open={isOpen}
+        close={() => setIsOpen(false)}
+        slides={slides}
+        plugins={[Captions, Thumbnails]}
+        carousel={{
+          imageFit: "cover",
+        }}
+        thumbnails={{
+          border: 0,
+        }}
+      />
+    </>
   );
 };
 

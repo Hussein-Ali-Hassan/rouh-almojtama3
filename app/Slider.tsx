@@ -2,24 +2,15 @@
 
 import { useRef, useState } from "react";
 import Image from "next/image";
-import Lightbox, { SlideImage } from "yet-another-react-lightbox";
-import Captions from "yet-another-react-lightbox/plugins/captions";
-import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
-import useWindowSize from "@/hooks/useWindowSize";
 
-export default function Slider({ images }: { images: string[] }) {
-  const [isOpen, setIsOpen] = useState(false);
-  const [clickedImageIndex, setClickedImageIndex] = useState(0);
-
+export default function Slider({
+  images,
+  onClick,
+}: {
+  images: string[];
+  onClick: (imgSrc: string) => void;
+}) {
   const scrollDivRef = useRef(null);
-
-  const { width } = useWindowSize();
-
-  const slides: SlideImage[] = images.map((image) => ({
-    src: image,
-    width: width && (width < 768 ? width : 900),
-    height: width && (width < 768 ? 300 : 600),
-  }));
 
   return (
     <>
@@ -35,27 +26,12 @@ export default function Slider({ images }: { images: string[] }) {
                 image={image}
                 totalImages={images.length}
                 index={index}
-                setClickedImageIndex={setClickedImageIndex}
-                setIsOpen={setIsOpen}
+                onClick={onClick}
               />
             ))}
           </div>
         </div>
       </div>
-
-      <Lightbox
-        index={clickedImageIndex}
-        open={isOpen}
-        close={() => setIsOpen(false)}
-        slides={slides}
-        plugins={[Captions, Thumbnails]}
-        carousel={{
-          imageFit: "cover",
-        }}
-        thumbnails={{
-          border: 0,
-        }}
-      />
     </>
   );
 }
@@ -63,15 +39,13 @@ export default function Slider({ images }: { images: string[] }) {
 function Card({
   image,
   index,
-  setClickedImageIndex,
-  setIsOpen,
+  onClick,
   totalImages,
 }: {
   image: string;
   index: number;
   totalImages: number;
-  setIsOpen: (v: boolean) => void;
-  setClickedImageIndex: (v: number) => void;
+  onClick: (imgSrc: string) => void;
 }) {
   const [isLoading, setLoading] = useState(true);
 
@@ -83,10 +57,7 @@ function Card({
       )}
     >
       <Image
-        onClick={() => {
-          setClickedImageIndex(index);
-          setIsOpen(true);
-        }}
+        onClick={() => onClick(image)}
         width={500}
         height={500}
         src={String(image)}
