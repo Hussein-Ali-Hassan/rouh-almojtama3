@@ -148,6 +148,8 @@ const events = [
   { title: "جلسة مناقشة في المسجد", date: "19-4-2021", imagesCount: 1 },
   { title: "جلسة مناقشة مع عشاء خفيف", date: "17-3-2021", imagesCount: 1 },
   { title: "جلسة مناقشة", date: "16-9-2020", imagesCount: 4 },
+  { title: "جلسة مناقشة", date: "28-6-2020", imagesCount: 4 },
+  { title: "جلسة مناقشة", date: "24-6-2020", imagesCount: 5 },
   {
     title: "جلسة مناقشة",
     date: "7-3-2020",
