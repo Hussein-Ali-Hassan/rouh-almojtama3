@@ -45,10 +45,46 @@ const events = [
     imagesCount: 1,
   },
   {
+    title: "جلسة مناقشة",
+    date: "15-9-2023",
+    imagesCount: 3,
+  },
+  {
+    title: "جلسة مناقشة",
+    date: "18-8-2023",
+    imagesCount: 2,
+  },
+  {
+    title: "جلسة مناقشة",
+    date: "30-6-2023",
+    imagesCount: 3,
+  },
+  {
+    title: "جلسة مناقشة",
+    date: "26-5-2023",
+    imagesCount: 3,
+  },
+  {
+    title: "ضيافة ومولد بمناسبة ولادة الإمام الحسين(ع)",
+    date: "24-2-2023",
+    imagesCount: 6,
+  },
+  {
+    title: "جلسة مناقشة",
+    date: "3-2-2023",
+    imagesCount: 1,
+  },
+  {
     title: "عشاء ومولد بمناسبة ولادة السيدة الزهراء(ع)",
     date: "13-1-2023",
     imagesCount: 3,
   },
+  {
+    title: "جلسة مناقشة",
+    date: "17-12-2022",
+    imagesCount: 1,
+  },
+
   {
     title: "جلسة مناقشة",
     date: "23-7-2022",
@@ -78,6 +114,21 @@ const events = [
     title: "جلسة مناقشة",
     date: "15-1-2022",
     imagesCount: 1,
+  },
+  {
+    title: "جلسة مناقشة",
+    date: "11-9-2021",
+    imagesCount: 2,
+  },
+  {
+    title: "جلسة مناقشة",
+    date: "28-8-2021",
+    imagesCount: 2,
+  },
+  {
+    title: "جلسة مناقشة عامرة",
+    date: "21-8-2021",
+    imagesCount: 7,
   },
   {
     title: "جلسة مناقشة",
