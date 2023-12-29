@@ -22,16 +22,20 @@ const Events = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [clickedImageIndex, setClickedImageIndex] = useState(0);
 
-  const allImages: string[] = [];
+  const allImages: { title: string; src: string }[] = [];
   events.forEach((event) => {
-    const images = computeImagesUrls(event.date, event.imagesCount);
+    const title = `${event.title} ~ ${event.date}`;
+    const images = computeImagesUrls(event.date, event.imagesCount).map(
+      (src) => ({ title, src })
+    );
     allImages.push(...images);
   });
 
   const { width } = useWindowSize();
 
   const slides: SlideImage[] = allImages.map((image) => ({
-    src: image,
+    title: image.title,
+    src: image.src,
     width: width && (width < 768 ? width : 900),
     height: width && (width < 768 ? 300 : 600),
   }));
@@ -71,7 +75,7 @@ const Events = () => {
                           onClick={(imgSrc) => {
                             // get the image index in all images
                             const imageIndex = allImages.findIndex(
-                              (image) => image === imgSrc
+                              (image) => image.src === imgSrc
                             );
                             setClickedImageIndex(imageIndex);
                             setIsOpen(true);
