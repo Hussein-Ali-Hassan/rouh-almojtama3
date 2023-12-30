@@ -1,5 +1,10 @@
 const events = [
   {
+    title: "جلسة مناقشة ختام العام",
+    date: "29-12-2023",
+    imagesCount: 3,
+  },
+  {
     title: "جلسة مناقشة",
     date: "22-12-2023",
     imagesCount: 3,
@@ -56,13 +61,23 @@ const events = [
   },
   {
     title: "جلسة مناقشة",
+    date: "4-8-2023",
+    imagesCount: 2,
+  },
+  {
+    title: "جلسة مناقشة",
     date: "30-6-2023",
     imagesCount: 3,
   },
   {
     title: "جلسة مناقشة",
     date: "26-5-2023",
-    imagesCount: 3,
+    imagesCount: 4,
+  },
+  {
+    title: "جلسة مناقشة",
+    date: "12-5-2023",
+    imagesCount: 2,
   },
   {
     title: "ضيافة ومولد بمناسبة ولادة الإمام الحسين(ع)",
@@ -93,6 +108,11 @@ const events = [
   {
     title: "جلسة مناقشة",
     date: "18-6-2022",
+    imagesCount: 1,
+  },
+  {
+    title: "جلسة مناقشة",
+    date: "25-6-2022",
     imagesCount: 1,
   },
   {
@@ -148,12 +168,18 @@ const events = [
   { title: "جلسة مناقشة في المسجد", date: "19-4-2021", imagesCount: 1 },
   { title: "جلسة مناقشة مع عشاء خفيف", date: "17-3-2021", imagesCount: 1 },
   { title: "جلسة مناقشة", date: "16-9-2020", imagesCount: 4 },
+  { title: "جلسة مناقشة", date: "18-7-2020", imagesCount: 2 },
   { title: "جلسة مناقشة", date: "28-6-2020", imagesCount: 4 },
   { title: "جلسة مناقشة", date: "24-6-2020", imagesCount: 5 },
   {
     title: "جلسة مناقشة",
     date: "7-3-2020",
     imagesCount: 4,
+  },
+  {
+    title: "جلسة مناقشة",
+    date: "11-1-2020",
+    imagesCount: 2,
   },
   {
     title: "جلسة مناقشة مع عيد ميلاد الشيخ مصطفى",
