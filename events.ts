@@ -12,7 +12,7 @@ const events = [
   {
     title: "جلسة مناقشة",
     date: "8-12-2023",
-    imagesCount: 3,
+    imagesCount: 2,
   },
   {
     title: "جلسة مناقشة",
@@ -118,12 +118,7 @@ const events = [
   {
     title: "عزيمة غدا مع انتخاب مدير",
     date: "3-6-2022",
-    imagesCount: 4,
-  },
-  {
-    title: "جلسة مناقشة",
-    date: "28-5-2022",
-    imagesCount: 1,
+    imagesCount: 3,
   },
   {
     title: "جلسة مناقشة",
@@ -148,7 +143,7 @@ const events = [
   {
     title: "جلسة مناقشة عامرة",
     date: "21-8-2021",
-    imagesCount: 7,
+    imagesCount: 6,
   },
   {
     title: "جلسة مناقشة",
@@ -163,7 +158,7 @@ const events = [
   {
     title: "جلسة مناقشة في الطبيعة مع كورونا",
     date: "26-6-2021",
-    imagesCount: 3,
+    imagesCount: 2,
   },
   { title: "جلسة مناقشة في المسجد", date: "19-4-2021", imagesCount: 1 },
   { title: "جلسة مناقشة مع عشاء خفيف", date: "17-3-2021", imagesCount: 1 },
