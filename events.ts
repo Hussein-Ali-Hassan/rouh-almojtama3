@@ -1,5 +1,10 @@
 const events = [
   {
+    title: "جلسة مناقشة باستضافة فرن الحجة جليلة",
+    date: "12-1-2024",
+    imagesCount: 2,
+  },
+  {
     title: "جلسة مناقشة ختام العام",
     date: "29-12-2023",
     imagesCount: 3,
