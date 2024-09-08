@@ -1,5 +1,75 @@
 const events = [
   {
+    title: "جلسة الختام",
+    date: "16-8-2024",
+    imagesCount: 1,
+  },
+  {
+    title: "جلسة مناقشة",
+    date: "9-8-2024",
+    imagesCount: 1,
+  },
+  {
+    title: "جلسة مناقشة",
+    date: "2-8-2024",
+    imagesCount: 1,
+  },
+  {
+    title: "جلسة مناقشة",
+    date: "26-7-2024",
+    imagesCount: 1,
+  },
+  {
+    title: "جلسة مناقشة",
+    date: "5-7-2024",
+    imagesCount: 1,
+  },
+  {
+    title: "جلسة مناقشة",
+    date: "21-6-2024",
+    imagesCount: 1,
+  },
+  {
+    title: "جلسة مناقشة",
+    date: "14-6-2024",
+    imagesCount: 1,
+  },
+  {
+    title: "جلسة مناقشة",
+    date: "7-6-2024",
+    imagesCount: 1,
+  },
+  {
+    title: "جلسة مناقشة",
+    date: "17-5-2024",
+    imagesCount: 1,
+  },
+  {
+    title: "جلسة مناقشة",
+    date: "19-4-2024",
+    imagesCount: 1,
+  },
+  {
+    title: "جلسة مناقشة",
+    date: "12-4-2024",
+    imagesCount: 1,
+  },
+  {
+    title: "جلسة مناقشة",
+    date: "1-3-2024",
+    imagesCount: 2,
+  },
+  {
+    title: "جلسة مناقشة مع افطار في اشهر النور",
+    date: "23-2-2024",
+    imagesCount: 3,
+  },
+  {
+    title: "جلسة مناقشة في المسجد",
+    date: "19-1-2024",
+    imagesCount: 1,
+  },
+  {
     title: "جلسة مناقشة باستضافة فرن الحجة جليلة",
     date: "12-1-2024",
     imagesCount: 2,
